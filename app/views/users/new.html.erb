@@ -1,0 +1,38 @@
+  <div class="signup-cover text-center">
+  <div class="logo pl-2">
+    <%= link_to "<img style='width: 40px' src='https://www.freelogodesign.org/file/app/client/thumb/2afd3b18-cda1-4bc6-aad2-71500f4b9a94_200x200.png?1596903768165'>".html_safe, users_path %>
+    <h4 class ='font-italic font-weight-bold'>'Programming isn't about what you know; it's about what you can figure out.'</h4>
+    <h3>Create Account</h3>
+  </div>
+<div class="d-flex justify-content-center">
+<div class="form-size">
+  <%= form_tag(users_path, method: "post") do %>
+    <div class="form-group">
+      <%= label_tag(:username, 'Username') %>
+      <%= text_field_tag :username, "", class: 'form-control', autofocus: "true" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag(:fullname, 'Fullname') %>
+      <%= text_field_tag :fullname, "", class: 'form-control', autofocus: "true" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag(:photo, 'Photo') %>
+      <%= file_field_tag :photo, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= label_tag(:coverimage, 'Cover Image') %>
+      <%= file_field_tag :coverimage, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= submit_tag('Sign Up', class: "btn btn-success form-control") %>
+    </div>
+  <% end %>
+</div>
+</div>
+<div class="d-flex justify-content-center">
+<div class="form-group">
+  <p class="text-muted"> Already have account? </p>
+  <%= link_to 'Sign in', new_session_path, class: "btn btn-primary bg-purple form-control" %>
+</div>
+</div>
+</div>

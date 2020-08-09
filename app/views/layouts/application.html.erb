@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CodingTwitter</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+
+  <body>
+  <% if notice.present? %>
+    <div class="notice">
+      <p> <%= notice %> </p>
+    </div>
+  <% end %>
+  <% if alert.present? %>
+    <div class="alert">
+      <p> <%= alert %> </p>
+    </div>
+  <% end %>
+    <%= yield %>
+  </body>
+</html>

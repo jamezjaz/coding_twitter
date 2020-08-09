@@ -1,0 +1,84 @@
+// @import "font-awesome";
+@import "bootstrap";
+
+.navbar-custom {
+    color: #53A8E9;
+    // height: 5rem;
+}
+
+.pl-3 {
+    color:rgb(64, 64, 141);
+}
+
+.user-index {
+    display: grid;
+    grid-template-columns: 0.8fr 3fr;
+}
+
+// .main-sidebar {
+//     display: grid;
+//     grid-template-rows: 0.3fr 0.3fr;
+// }
+
+.tweets {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.main-mid {
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+}
+
+.left-sidebar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(10rem, 10rem);
+    grid-template-areas: 
+    'user user'
+    'following followers'
+    'home home'
+    'profile profile'
+    'logout logout';
+}
+
+.user {
+    grid-area: user;
+}
+
+.following {
+    grid-area: following;
+}
+
+.followers {
+    grid-area: followers;
+}
+
+.home {
+    grid-area: home;
+}
+
+.profile {
+    grid-area: profile;
+}
+
+.logout {
+    grid-area: logout;
+}
+
+.right-bar {
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+}
+
+.right-bar2 {
+    display: grid;
+    grid-template-rows: 2fr 1fr 1fr;
+}
+
+@media screen and (max-width: 768px) {
+    .left-sidebar {
+        display: none;
+    }
+}
+

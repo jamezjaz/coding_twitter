@@ -1,0 +1,14 @@
+<div class="login-cover text-center">
+  <div class="logo pl-2">
+    <%= link_to "<img style='width: 40px' src='https://www.freelogodesign.org/file/app/client/thumb/2afd3b18-cda1-4bc6-aad2-71500f4b9a94_200x200.png?1596903768165'>".html_safe, users_path %>
+  </div>
+  <h4 class ='font-italic font-weight-bold'>'If you can write "hello world" you can change the world.'</h4>
+  <h3>Log in to Coding Twitter</h3>
+<%= form_tag '/sessions', :method => 'post' do %>
+    <%= label_tag :username, 'Please enter Username' %> <br />
+    <%= text_field_tag :username, params[:username] %> <br />
+    <%= submit_tag "Login" %> <br />
+    <p class="text-muted"> Already have account? </p>
+    <%= link_to "Sign up for Coding Twitter", new_user_path %>
+  <% end %>
+</div>
