@@ -1,0 +1,9 @@
+<div class="text-center">
+  <div class="d-flex justify-content-center">
+    <%= form_for(@opinion) do |form| %>
+      <h3>TWEET SOMETHING</h3>
+      <%= form.text_field :text, class: 'form-control', placeholder: 'Add New Tweet' %>
+      <%= form.submit 'Create Tweet', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

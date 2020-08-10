@@ -1,14 +1,19 @@
 class OpinionsController < ApplicationController
   def index
-    @opinion = Opinion.new
+    @opinions = Opinion.new
+    # @opinion = tweets
+  end
+
+  def new
+    @opinions =Opinion.new
   end
 
   def create
-    @opinion = Opinion.new(opinion_params)
+    @opinions = Opinion.new(opinion_params)
     
-    if @opinion.save
+    if @opinions.save
       flash[:notice] = 'Tweet Created'
-      redirect_to root_path
+      redirect_to new_opinion_path
     else
       flash[:notice] = 'Unable to create tweet'
       redirect_to opinions_path
@@ -18,10 +23,10 @@ class OpinionsController < ApplicationController
   private
 
   def opinion_params
-    params.require(:opinions).permit(:text)
+    params.permit(:text)
   end
 
-  def tweets
-    @opinions = current_user.friends_and_own_posts
-  end
+  # def tweets
+  #   @opinions = current_user.friends_and_own_posts
+  # end
 end
