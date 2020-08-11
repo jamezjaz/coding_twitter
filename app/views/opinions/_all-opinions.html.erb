@@ -1,5 +1,5 @@
 <div class="all-tweets p-3">
-  <% @opinions.user.each do |x| %>
+  <% @opinions.each do |x| %>
     <div class="all-tweets bg-white p-3 rounded border-bottom">
       <div class="tweet-image">
         <%= link_to image_tag(x.user.photo,  class: 'w-100 h-100 rounded'), users_path(x.id) %>

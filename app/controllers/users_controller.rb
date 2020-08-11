@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def index
     @user = User.all
+    @opinions = Opinion.all
   end
 
   def new

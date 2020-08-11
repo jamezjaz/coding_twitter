@@ -10,7 +10,10 @@
 <div class = 'following border border-info'> Following </div>
 <div class = 'followers border border-dark'> Followers </div>
 <div class = 'home border border-dark'> HOME </div>
-<div class = 'profile border border-warning'> PROFILE </div>
+<div class = 'profile border border-warning'>
+  <%= link_to "<i class='fas fa-user'></i>".html_safe, user_path(current_user.id) %>
+  <%= link_to 'PROFILE', user_path(current_user.id) %>
+</div>
 
   <div class="logout pt-2 pr-">
     <%= link_to "<i class='pl-3 fas fa-sign-out-alt'></i>".html_safe, session_path(:current_user), method: :delete %>
