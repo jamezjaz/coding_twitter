@@ -11,16 +11,16 @@
   </head>
 
   <body>
-  <% if notice.present? %>
-    <div class="notice">
-      <p> <%= notice %> </p>
-    </div>
-  <% end %>
-  <% if alert.present? %>
-    <div class="alert">
-      <p> <%= alert %> </p>
-    </div>
-  <% end %>
+    <% if notice.present? %>
+      <div class="notice">
+        <p class = 'notice-color text-center text-success h5 pt-2'> <%= notice %> </p>
+      </div>
+    <% end %>
+    <% if alert.present? %>
+      <div class="alert">
+        <p class = 'alert-color text-center text-danger h5 pt-2'> <%= alert %> </p>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
