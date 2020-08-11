@@ -1,22 +1,25 @@
 <section class = 'left-sidebar'>
-<div class = 'user-details d-flex'> 
+<div class = 'user-details photo-name'> 
   <div class ='profile-photo p-4'>
     <%= link_to image_tag(current_user.photo,  class: 'w-100 h-100 rounded'), user_path(current_user) %>
   </div>
-  <div class= 'name p-4'>
-    <%=link_to current_user.fullname.upcase, user_path(current_user.id), class: 'text-white font-weight-bold' %>
+  <div class= 'name user-details p-4'>
+    <%=link_to current_user.fullname.upcase, user_path(current_user.id), class: 'text-secondary font-weight-bold' %>
   </div>
 </div>
-<div class = 'following border border-info'> Following </div>
-<div class = 'followers border border-dark'> Followers </div>
-<div class = 'home border border-dark'> HOME </div>
-<div class = 'profile border border-warning'>
-  <%= link_to "<i class='fas fa-user'></i>".html_safe, user_path(current_user.id) %>
-  <%= link_to 'PROFILE', user_path(current_user.id) %>
+<div class = 'following user-details border border-info'> Following </div>
+<div class = 'followers user-details border border-dark'> Followers </div>
+<div class = 'home p-4 user-details'>
+  <%= link_to "<i class='fas fa-home text-secondary pr-3'></i>".html_safe, users_path %>
+  <%= link_to 'HOME', users_path, class: 'text-secondary' %>
+</div>
+<div class = 'profile p-4 user-details'>
+  <%= link_to "<i class='fas fa-user text-secondary pr-3'></i>".html_safe, user_path(current_user.id) %>
+  <%= link_to 'PROFILE', user_path(current_user.id), class: 'text-secondary' %>
 </div>
 
-  <div class="logout pt-2 pr-">
-    <%= link_to "<i class='pl-3 fas fa-sign-out-alt'></i>".html_safe, session_path(:current_user), method: :delete %>
-    <%= link_to 'LOGOUT', session_path(:current_user), method: :delete %>
+  <div class="logout p-4 user-details">
+    <%= link_to "<i class='pl-3 fas fa-sign-out-alt text-secondary pr-3'></i>".html_safe, session_path(:current_user), method: :delete %>
+    <%= link_to 'LOGOUT', session_path(:current_user), class: 'text-secondary', method: :delete %>
   </div>
 </section>

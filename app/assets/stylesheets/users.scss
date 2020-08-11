@@ -1,3 +1,123 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.user-index {
+    display: grid;
+    grid-template-columns: 0.8fr 3fr;
+}
+
+.tweets {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.main-mid {
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+}
+
+.left-sidebar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(2rem, auto);
+    grid-template-areas: 
+    'user user'
+    'following followers'
+    'home home'
+    'profile profile'
+    'logout logout';
+}
+
+.user {
+    grid-area: user;
+}
+
+.following {
+    grid-area: following;
+}
+
+.followers {
+    grid-area: followers;
+}
+
+.home {
+    grid-area: home;
+}
+
+.profile {
+    grid-area: profile;
+}
+
+.logout {
+    grid-area: logout;
+}
+
+.right-bar {
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+}
+
+.right-bar2 {
+    display: grid;
+    grid-template-rows: 2fr 1fr 1fr;
+}
+
+.user-details {
+    background-color: #213246;
+}
+
+.photo-name {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.profile-photo {
+    width: 9rem;
+    height: 9rem;
+}
+
+.user-info {
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    grid-template-areas: 
+    'profile-photo list'
+    'name name';
+}
+
+.profile-photo-show {
+    grid-area: profile-photo;
+}
+
+.name-show {
+    grid-area: name;
+}
+
+.list {
+    grid-area: list;
+}
+
+.tweet-photo {
+    width: 5rem;
+    height: 5rem;
+}
+
+.name,
+.name-show {
+    font-size: large;
+}
+
+// .home,
+// .profile,
+// .logout {
+//     font-size: 1.5rem;
+// }
+
+.user-details {
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .left-sidebar {
+        display: none;
+    }
+}

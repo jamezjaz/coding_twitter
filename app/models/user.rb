@@ -13,7 +13,24 @@ class User < ApplicationRecord
     has_one_attached :photo
     has_one_attached :coverimage
 
-    def follower?(current_user, user)
-      current_user.following_users.ids.include?(user)
+    # def follower?(current_user, user)
+    #   current_user.following_users.ids.include?(user)
+    # end
+
+    def follow(user)
+      following_users << user if !self.following?(user) && self != user
     end
+
+    def unfollow(user)
+      following_users.delete(user)
+    end
+
+    def following?(user)
+      following_users.include?(user)
+    end
+
+    # def feed
+    #   following_ids = 'SELECT followed_id FROM followings WHERE follower_id = :user_id'
+    #   Opinion.where('user_id IN (#{following_ids}) OR user_id = :user_id', user_id: id)
+    # end
 end

@@ -2,7 +2,7 @@
   <% @opinions.each do |x| %>
     <div class="all-tweets bg-white p-3 rounded border-bottom">
       <div class="tweet-image">
-        <%= link_to image_tag(x.user.photo,  class: 'w-100 h-100 rounded'), users_path(x.id) %>
+        <%= link_to image_tag(x.user.photo,  class: 'tweet-photo rounded'), users_path(x.id) %>
       </div>
       <div class="post-details pl-4 d-flex flex-column">
         <%= link_to  x.user.fullname, users_path(x.user) %>

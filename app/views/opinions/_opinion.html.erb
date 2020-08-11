@@ -2,11 +2,11 @@
   <div class="p-3 border-bottom bg-white">
     <%= form_tag(opinions_path, method: "post") do %>
       <div class="form-group">
-        <%= label_tag(:text, 'Creat Your Tweet') %>
-        <%= text_area_tag :text, "", class: 'form-control', autofocus: "true", rows: "2" %>
+        <%= label_tag(:text, 'TWEET SOMETHING') %>
+        <%= text_area_tag :text, "", class: 'form-control', placeholder: 'Compose new tweet', autofocus: "true", rows: "2" %>
       </div>
       <div class="form-group">
-        <%= submit_tag('Create Tweet', class: "btn btn-primary") %>
+        <%= submit_tag('Tweet', class: "btn btn-primary") %>
       </div>
     <% end %>
   </div>
