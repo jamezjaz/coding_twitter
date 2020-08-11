@@ -11,5 +11,9 @@
 <div class = 'followers border border-dark'> Followers </div>
 <div class = 'home border border-dark'> HOME </div>
 <div class = 'profile border border-warning'> PROFILE </div>
-<div class = 'logout border border-dark'> LOGOUT </div>
+
+  <div class="logout pt-2 pr-">
+    <%= link_to "<i class='pl-3 fas fa-sign-out-alt'></i>".html_safe, session_path(:current_user), method: :delete %>
+    <%= link_to 'LOGOUT', session_path(:current_user), method: :delete %>
+  </div>
 </section>

@@ -1,0 +1,13 @@
+<div class="recent-tweets p-3">
+  <% current_user.opinions.each do |x| %>
+    <div class="all-tweets bg-white p-3 rounded border-bottom d-flex">
+      <div class="tweet-photo">
+        <%= link_to image_tag(x.user.photo,  class: 'tweet-photo rounded'), user_path(x.id) %>
+      </div>
+      <div class="post-details pl-4 d-flex flex-column">
+        <%= link_to  x.user.fullname, user_path(x.user) %>
+        <p class="pt-2"><%= x.text %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
