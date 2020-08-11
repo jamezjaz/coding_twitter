@@ -76,6 +76,19 @@
     grid-template-rows: 2fr 1fr 1fr;
 }
 
+.user-details {
+    background-color: rgb(8, 8, 49);
+}
+
+.profile-photo {
+    width: 9rem;
+    height: 9rem;
+}
+
+.name {
+    font-size: large;
+}
+
 @media screen and (max-width: 768px) {
     .left-sidebar {
         display: none;

@@ -1,0 +1,15 @@
+<section class = 'left-sidebar'>
+<div class = 'user-details d-flex'> 
+  <div class ='profile-photo p-4'>
+    <%= link_to image_tag(current_user.photo,  class: 'w-100 h-100 rounded'), user_path(current_user) %>
+  </div>
+  <div class= 'name p-4'>
+    <%=link_to current_user.fullname.upcase, user_path(current_user.id), class: 'text-white font-weight-bold' %>
+  </div>
+</div>
+<div class = 'following border border-info'> Following </div>
+<div class = 'followers border border-dark'> Followers </div>
+<div class = 'home border border-dark'> HOME </div>
+<div class = 'profile border border-warning'> PROFILE </div>
+<div class = 'logout border border-dark'> LOGOUT </div>
+</section>

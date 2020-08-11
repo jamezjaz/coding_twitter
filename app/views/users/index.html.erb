@@ -1,44 +1,14 @@
 <div class = 'container-fluid p-3'>
 
   <div class = 'user-index'>
-    <section class = 'left-sidebar border border-info'>
-      <div class = 'user border border-warning'>
-        
-      </div>
-      <div class = 'following border border-info'> Following </div>
-      <div class = 'followers border border-dark'> Followers </div>
-      <div class = 'home border border-dark'> HOME </div>
-      <div class = 'profile border border-warning'> PROFILE </div>
-      <div class = 'logout border border-dark'> LOGOUT </div>
-    </section>
+    <%= render 'users/left-sidebar' %>
   <div class = 'main-sidebar'>
     <div class = 'nav-section'>
       <%= render 'layouts/navbar' %>
     </div>
     <div class = 'tweets'>
-      <section class = 'main-mid'>
-        <div class = 'border border-warning'>
-          <p> TWEETS </p>
-        </div>
-        <div class = 'tweet-field border border-info'>
-          <p> TWEET SOMETHING... </p>
-        </div>
-        <div class = 'recent-tweets border border-dark'>
-          <p> RECENT TWEETS </p>
-        </div>
-      </section>
-      <section class = 'right-bar'>
-        <div class = 'user-info border border-dark'>
-          <p> WHO TO FOLLOW </p>
-        <div>
-        <div class = 'follow-info border border-info'>
-          <p> 
-            USERS </br>
-            5. When the user opens the profile page (see the *Userpage* screenshot above), they can see:
-            1. Left-side menu (includes only links to pages that are implemented).
-          </p>
-        <div>
-      </section>
+    <%= render 'users/main-content' %>
+    <%= render 'users/right-bar' %>
     </div>
   </div>
 </div>
