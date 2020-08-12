@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :comments
   resources :sessions
   resources :followings
+  resources :likes
 end

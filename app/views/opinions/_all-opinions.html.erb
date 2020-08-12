@@ -7,6 +7,13 @@
       <div class="post-details pl-4 d-flex flex-column">
         <%= link_to  x.user.fullname, user_path(x.user) %>
         <p class="pt-2"><%= x.text %></p>
+
+        <div class='opinion-liking'>
+        <span class='opinion-date'> 
+        <%= x.created_at.strftime("%Y/%m/%d") %>
+        <%= like_or_dislike(x.id) %>
+      </div>
+
         <%= render 'comments/new-comment' %>
       </div>
     </div>

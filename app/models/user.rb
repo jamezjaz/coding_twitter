@@ -1,6 +1,7 @@
 class User < ApplicationRecord
     has_many :opinions, foreign_key: 'author_id'
     has_many :comments, dependent: :destroy
+    has_many :likes, dependent: :destroy
 
     has_many :followings, foreign_key: 'follower_id'
     has_many :following_users, through: :followings, source: :inverse_user
