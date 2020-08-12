@@ -9,7 +9,7 @@
             <% if follow.follower?(current_user, follow.id) %>
               <%=link_to "<i class='text-warning fas fa-minus-circle fa-2x'></i>".html_safe, following_path(followed_id: follow.id), method: :delete %>
             <% else %>
-            <%= follow.username %>
+            <%= link_to follow.username, user_path(follow.id) %>
             <% if follow.id != current_user.id %>
               <%=link_to "<i class='text-success fas fa-plus-circle fa-2x'></i>".html_safe, followings_path(followed_id: follow.id), method: :post %>
             <% end %>

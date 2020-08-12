@@ -1,14 +1,19 @@
 <section class = 'right-bar2'>
   <div class = 'user-info photo-name'> 
     <div class ='profile-photo-show p-4 ml-auto'>
-      <%= link_to image_tag(current_user.photo,  class: 'profile-photo w-100 h-100 rounded'), user_path(current_user) %>
+      <%= link_to image_tag(@user.photo,  class: 'profile-photo w-100 h-100 rounded'), user_path(current_user) %>
     </div>
     <div class = 'list ml-auto mr-auto pt-3'>
       <i class="fas fa-list fa-lg text-primary pt-2"></i>
     </div>
     <div class= 'name-show p-4 ml-4'>
-      <%=link_to current_user.fullname.upcase, user_path(current_user.id), class: 'text-dark font-weight-bold' %> <br />
-      <%= current_user.username %>
+      <%=link_to @user.fullname.upcase, user_path(current_user.id), class: 'text-dark font-weight-bold' %> <br />
+      <%= @user.username %>
+      <% @follow_users.each do |follow| %>
+        <% if follow.id = current_user.id %>
+          <%=link_to "<i class='text-warning fas fa-minus-circle fa-2x'></i>".html_safe, following_path(followed_id: follow.id), method: :delete %>
+        <% end %>
+      <% end %>
     </div>
   </div>
   <div class = 'follow-info border border-info'>
