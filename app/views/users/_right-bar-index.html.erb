@@ -4,7 +4,18 @@
       <p class = 'font-weight-bold p-3'> WHO TO FOLLOW </p>
     </div>
     <div class = 'follow-info border border-info p-3'>
-
+      <% @follow_users.each do |follow| %>
+        <% if follow.id != current_user.id %>
+            <% if follow.follower?(current_user, follow.id) %>
+              <%=link_to "<i class='text-warning fas fa-minus-circle fa-2x'></i>".html_safe, following_path(followed_id: follow.id), method: :delete %>
+            <% else %>
+            <%= follow.username %>
+            <% if follow.id != current_user.id %>
+              <%=link_to "<i class='text-success fas fa-plus-circle fa-2x'></i>".html_safe, followings_path(followed_id: follow.id), method: :post %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
     <div>
   </div>
 </section>

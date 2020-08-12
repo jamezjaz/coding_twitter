@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def index
     @user = User.all
     @opinions = Opinion.all
-    # @follow_users = @users.where(id: (@users.ids - current_user.following_users.ids)).order(created_at: :desc)
+    @follow_users = @user.where(id: (@user.ids - current_user.following_users.ids)).order(created_at: :desc)
   end
 
   def new
