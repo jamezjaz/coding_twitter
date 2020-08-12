@@ -1,5 +1,5 @@
 <div class="recent-tweets p-3">
-  <% current_user.opinions.each do |x| %>
+  <% current_user.opinions.ordered_by_created_at.each do |x| %>
     <div class="all-tweets bg-white p-3 rounded border-bottom d-flex">
       <div class="tweet-photo">
         <%= link_to image_tag(x.user.photo,  class: 'tweet-photo rounded'), user_path(x.id) %>
@@ -7,6 +7,10 @@
       <div class="post-details pl-4 d-flex flex-column">
         <%= link_to  x.user.fullname, user_path(x.user) %>
         <p class="pt-2"><%= x.text %></p>
+        <div class='opinion-liking'>
+          <span class='opinion-date'> <%= x.created_at.strftime("%Y/%m/%d") %> </span>
+        <%= like_or_dislike(x.id) %>
+      </div>
       </div>
     </div>
   <% end %>
