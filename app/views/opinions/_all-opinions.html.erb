@@ -7,6 +7,7 @@
       <div class="post-details pl-4 d-flex flex-column">
         <%= link_to  x.user.fullname, user_path(x.user) %>
         <p class="pt-2"><%= x.text %></p>
+        <%= render 'comments/new-comment' %>
       </div>
     </div>
   <% end %>

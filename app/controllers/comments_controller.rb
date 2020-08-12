@@ -5,15 +5,15 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     
     if @comment.save
-      redirect_to opinions_path, notice: 'Comment was successfully created.'
+      redirect_to users_path, notice: 'Comment was successfully created.'
     else
-      redirect_to opinions_path, alert: 'Unable to create comment'
+      redirect_to users_path, alert: 'Unable to create comment'
     end
   end
     
   private
     
   def comment_params
-    params.require(:comment).permit(:content)
+    params.permit(:content)
   end
 end

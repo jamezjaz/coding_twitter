@@ -9,11 +9,7 @@
     <div class= 'name-show p-4 ml-4'>
       <%=link_to @user.fullname.upcase, user_path(current_user.id), class: 'text-dark font-weight-bold' %> <br />
       <%= @user.username %>
-      <% @follow_users.each do |follow| %>
-        <% if follow.id = current_user.id %>
-          <%=link_to "<i class='text-warning fas fa-minus-circle fa-2x'></i>".html_safe, following_path(followed_id: follow.id), method: :delete %>
-        <% end %>
-      <% end %>
+          <%=link_to "<i class='text-warning fas fa-minus-circle fa-2x'></i>".html_safe, following_path(followed_id: @user.id), method: :delete %>
     </div>
   </div>
   <div class = 'follow-info border border-info'>
