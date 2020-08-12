@@ -33,14 +33,6 @@ ActiveRecord::Schema.define(version: 2020_08_12_152601) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "comments", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "opinion_id"
-    t.text "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "followings", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "followed_id"

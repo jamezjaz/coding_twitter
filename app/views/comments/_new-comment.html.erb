@@ -1,9 +1,0 @@
-<%= form_tag(comments_path, method: "post") do %>
-    <div class="form-group">
-      <%= label_tag(:comment, 'Write your Comment') %>
-      <%= text_area_tag :comment, "", class: 'form-control', autofocus: "true", rows: "2" %>
-    </div>
-    <div class="form-group">
-      <%= submit_tag('Add Comment', class: "btn btn-primary") %>
-    </div>
-  <% end %>
