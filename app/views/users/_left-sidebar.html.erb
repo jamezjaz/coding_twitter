@@ -1,14 +1,22 @@
-<section class = 'left-sidebar'>
-<div class = 'user-details photo-name'> 
-  <div class ='profile-photo p-4'>
-    <%= link_to image_tag(current_user.photo,  class: 'w-100 h-100 rounded'), user_path(current_user) %>
+<section class = 'left-aside'>
+<div class ='d-flex justify-content-around py-4'>
+  <div>
+    <%= link_to image_tag(current_user.photo,  class: 'profile-img-index rounded'), user_path(current_user) %>
   </div>
-  <div class= 'name user-details p-4'>
+  <div class = 'mt-4 ml-n4'>
     <%=link_to current_user.fullname.upcase, user_path(current_user.id), class: 'text-secondary font-weight-bold' %>
   </div>
 </div>
-<div class = 'following user-details border border-info'> Following </div>
-<div class = 'followers user-details border border-dark'> Followers </div>
+
+<div class = 'left-sidebar'>
+  <div class ='text-center border py-3'>
+    <h4 class = 'text-white'><%= current_user.followings.count %> </h4>
+    <h5 class = 'text-secondary font-size-large font-weight-bold'>Followings</h5>
+  </div>
+  <div class ='text-center border py-3'>
+    <h4 class = 'text-white'><%= current_user.followers.count %> </h4>
+    <h5 class = 'text-secondary font-size-large font-weight-bold'>Followings</h5>
+  </div>
 <div class = 'home p-4 user-details'>
   <%= link_to "<i class='fas fa-home text-secondary pr-3'></i>".html_safe, users_path %>
   <%= link_to 'HOME', users_path, class: 'text-secondary' %>
@@ -19,7 +27,8 @@
 </div>
 
   <div class="logout p-4 user-details">
-    <%= link_to "<i class='pl-3 fas fa-sign-out-alt text-secondary pr-3'></i>".html_safe, session_path(:current_user), method: :delete %>
+    <%= link_to "<i class='fas fa-power-off text-secondary pr-3'></i>".html_safe, session_path(:current_user), method: :delete %>
     <%= link_to 'LOGOUT', session_path(:current_user), class: 'text-secondary', method: :delete %>
   </div>
+</div>
 </section>

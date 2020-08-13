@@ -1,12 +1,11 @@
-<section class = 'main-mid'>
-  <div class = 'pl-4 pt-4'>
-    <p> TWEETS </p>
-  </div>
+<section class = 'container-fluid main-mid-index'>
+ 
+  <%=  link_to "TWEETS", users_path, class: "active-link"%>
+  <%=  link_to "PHOTOS", users_path, class: "pl-3"%>
+  <%=  link_to "VIDEOS", users_path, class: "pl-3"%>
   <div class = 'tweet-field'>
     <%= render 'opinions/opinion' %>
   </div>
-  <div class = 'recent-tweets border border-dark'>
-    <p> RECENT TWEETS </p>
+    <p class='pl-4'> RECENT TWEETS </p>
   <%= render 'opinions/all-opinions' %>
-  </div>
 </section>

@@ -1,12 +1,9 @@
 <section class = 'main-mid'>
-  <div class = 'pl-4 pt-4'>
-    <p> TWEETS </p>
-  </div>
-  <div class = 'tweet-field'>
-    <%= render 'opinions/opinion' %>
+  <div class = 'cover-image'>
+    <%= link_to image_tag(@user.coverimage,  class: 'cover-image'), user_path(@user.id) %>
   </div>
   <div class = 'recent-tweets border border-dark'>
-    <p> RECENT TWEETS </p>
+    <p> YOUR TWEETS </p>
     <%= render 'opinions/tweets' %>
   </div>
 </section>
