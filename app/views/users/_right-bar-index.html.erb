@@ -5,16 +5,15 @@
     </div>
     <div class = 'follow-info border-top p-3'>
       <% @follow_users.each do |follow| %>
-        <% if follow.id != current_user.id %>
-          <%#= link_to image_tag(follow.photo,  class: 'tweet-photo rounded-circle'), user_path(follow.id) %>
+        <div class="d-flex p-3">
+          <% if follow.id != current_user.id %>
+            <%= link_to image_tag(follow.photo, class: 'tweet-photo rounded-circle'), user_path(follow.id) %>
             <% if follow.follower?(current_user, follow.id) %>
-              <%=link_to "<i class='text-warning fas fa-minus-circle fa-2x'></i>".html_safe, following_path(followed_id: follow.id), method: :delete %>
-            <% else %>
-            <div class="d-flex justify-content-left p-3">
-              <h4><%= link_to follow.fullname, user_path(follow.id), class: 'pr-4' %></h4>
-              
+            <%=link_to "<i class='text-warning fas fa-minus-circle fa-2x'></i>".html_safe, following_path(followed_id: follow.id), method: :delete %>
+          <% else %> 
+            <h4 class = 'pt-3'><%= link_to follow.fullname, user_path(follow.id), class: 'pr-4' %></h4>             
             <% if follow.id != current_user.id %>
-              <%=link_to "<i class='text-success fas fa-plus-circle fa-2x d-flex justify-content-center'></i>".html_safe, followings_path(followed_id: follow.id), method: :post %>
+              <%=link_to "<i class='text-success fas fa-plus-circle fa-2x pt-3'></i>".html_safe, followings_path(followed_id: follow.id), method: :post %>
             </div>
             <% end %>
           <% end %>

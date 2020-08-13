@@ -45,8 +45,8 @@
           <% if x.id != current_user.id %>
             <% if !x.follower?(current_user, x.id) %>
               <div class = 'd-flex justify-content-between'>
-                <%= link_to image_tag(x.photo,  class: 'followers-photo rounded-circle'), user_path(x.id) %>
-                <%= link_to x.fullname, user_path(x.id) %>
+                <%= link_to image_tag(x.photo,  class: 'users-photo-right-show rounded-circle'), user_path(x.id) %>
+                <%= link_to x.fullname, user_path(x.id), class: 'pt-2' %>
                 <%=link_to "<i class='text-success fas fa-plus-circle fa-2x d-flex justify-content-center'></i>".html_safe, followings_path(followed_id: x.id), method: :post %>
               </div>
             <% end %>
