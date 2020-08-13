@@ -79,6 +79,8 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.6)
     crass (1.0.6)
+    database_cleaner (1.8.5)
+    diff-lcs (1.4.4)
     erubi (1.9.0)
     execjs (2.7.0)
     ffi (1.13.1)
@@ -147,6 +149,27 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (1.7.1)
+    rspec (3.9.0)
+      rspec-core (~> 3.9.0)
+      rspec-expectations (~> 3.9.0)
+      rspec-mocks (~> 3.9.0)
+    rspec-core (3.9.2)
+      rspec-support (~> 3.9.3)
+    rspec-expectations (3.9.2)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.9.0)
+    rspec-mocks (3.9.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.9.0)
+    rspec-rails (4.0.1)
+      actionpack (>= 4.2)
+      activesupport (>= 4.2)
+      railties (>= 4.2)
+      rspec-core (~> 3.9)
+      rspec-expectations (~> 3.9)
+      rspec-mocks (~> 3.9)
+      rspec-support (~> 3.9)
+    rspec-support (3.9.3)
     ruby_dep (1.5.0)
     rubyzip (2.3.0)
     sass (3.7.4)
@@ -211,15 +234,18 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.5)
   byebug
-  capybara (>= 2.15)
+  capybara
   chromedriver-helper
   coffee-rails (~> 4.2)
+  database_cleaner
   font-awesome-sass (~> 5.12.0)
   gravatar_image_tag (~> 1.2)
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   puma (~> 3.11)
   rails (~> 5.2.4, >= 5.2.4.3)
+  rspec
+  rspec-rails
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
