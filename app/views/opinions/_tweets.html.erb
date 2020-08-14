@@ -1,5 +1,5 @@
 <div class="recent-tweets p-3">
-  <% current_user.opinions.ordered_by_created_at.each do |x| %>
+  <% @user.opinions.ordered_by_created_at.each do |x| %>
     <div class="all-tweets bg-white p-3 rounded border-bottom d-flex">
       <div class="tweet-photo">
         <%= link_to image_tag(x.user.photo,  class: 'tweet-photo rounded'), user_path(x.id) %>
