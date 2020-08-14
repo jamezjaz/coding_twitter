@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def new
     redirect_to users_path(session[:current_user_id]) if session[:current_user]
   end
-    
+
   def create
     @user = User.find_by(username: params[:username])
     if @user

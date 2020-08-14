@@ -6,9 +6,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def authenticate
-    if !current_user
-      flash[:alert] = "You need to login first!"
-      redirect_to new_session_path
-    end
+    flash[:alert] = 'You need to login first!' unless current_user
+    redirect_to new_session_path
   end
 end

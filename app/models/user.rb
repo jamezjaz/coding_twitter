@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true, length: { minimum: 3, maximum: 20 }
   validates :fullname, presence: true, length: { minimum: 5, maximum: 20 }
-  
+
   has_many :opinions, foreign_key: 'author_id'
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy

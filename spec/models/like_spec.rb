@@ -5,7 +5,6 @@ RSpec.describe 'Like' do
   let(:like) { user.likes.build(opinion_id: 1).save }
 
   describe 'Association amongst users and likes' do
-
     it 'should be valid if association between user and like is valid' do
       user
       tweet

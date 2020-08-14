@@ -5,7 +5,6 @@ RSpec.describe User, type: :model do
   let(:following) { user.followings.build(followed_id: 2).save }
 
   describe 'Following association amongst users' do
-
     it 'should be valid if association between user and following works' do
       user
       user2
