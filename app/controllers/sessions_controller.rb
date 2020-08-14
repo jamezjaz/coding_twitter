@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if @user
       session[:user_id] = @user.id
       flash[:notice] = 'You have logged in successfully'
-      redirect_to root_path(@user.id)
+      redirect_to users_path
     else
       flash.now[:alert] = 'Invalid Credentials'
       render 'new'

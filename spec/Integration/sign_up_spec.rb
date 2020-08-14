@@ -1,20 +1,3 @@
-# require 'rails_helper'
-
-# RSpec.describe 'Sign up', type: :feature do
-#   let(:user) { User.create!(username: 'Mohammad', fullname: 'Jesus Navas') }
-# #   let(:friend) { User.create!(name: 'James', email: 'fahad@gmail.com', password: 'abc123456789') }
-
-#   scenario 'sign up' do
-#     visit root_path
-
-#     # Fill the fields
-#     fill_in('user[username]', with: 'Mohammad')
-#     fill_in('user[fullname]', with: 'Jesus Navas')
-#     click_button 'Sign up'
-#     expect(page).to have_content('Registered successfully')
-#   end
-# end
-
 require 'rails_helper'
 
 RSpec.describe 'Creates a new account', type: :feature do
