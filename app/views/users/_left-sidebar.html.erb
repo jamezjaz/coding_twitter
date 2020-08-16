@@ -1,7 +1,7 @@
 <section class = 'left-aside'>
 <div class ='d-flex justify-content-around py-4'>
   <div>
-    <%= link_to image_tag(current_user.photo,  class: 'profile-img-index rounded'), user_path(current_user) %>
+    <%= image_check(current_user.photo) %>
   </div>
   <div class = 'mt-4 ml-n4'>
     <%=link_to current_user.fullname.upcase, user_path(current_user.id), class: 'text-secondary font-weight-bold' %>

@@ -7,7 +7,7 @@
     <% @follow_users.each do |follow| %>
       <div class="d-flex p-3">
         <% if follow.id != current_user.id %>
-          <%= link_to image_tag(follow.photo, class: 'tweet-photo rounded-circle'), user_path(follow.id) %>
+          <%= image_check_right(follow.photo) %>
           <% if follow.follower?(current_user, follow.id) %>
           <%=link_to "<i class='text-warning fas fa-minus-circle fa-2x'></i>".html_safe, following_path(followed_id: follow.id), method: :delete %>
         <% else %> 

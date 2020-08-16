@@ -1,6 +1,6 @@
 <section class = 'main-mid'>
   <div class = 'cover-image'>
-    <%= link_to image_tag(@user.coverimage,  class: 'cover-image'), user_path(@user.id) %>
+    <%= image_check_cover(@user.coverimage) %>
   </div>
   <div class = 'recent-tweets'>  
     <h6 class = 'p-4'> YOUR TWEETS </h6>

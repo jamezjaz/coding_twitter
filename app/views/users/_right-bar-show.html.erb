@@ -12,7 +12,7 @@
         <% end %>
       </div>
       <div class = 'profile-img-show mx-4'>
-        <%= link_to image_tag(@user.photo,  class: 'img-fluid rounded-circle'), user_path(current_user) %>
+        <%= image_check_right(@user.photo) %>
       </div>
       <div class = 'lists'>
         <i class="fas fa-list fa-lg text-primary pt-2"></i>
@@ -45,7 +45,7 @@
           <% if x.id != current_user.id %>
             <% if !x.follower?(current_user, x.id) %>
               <div class = 'd-flex justify-content-between'>
-                <%= link_to image_tag(x.photo,  class: 'users-photo-right-show rounded-circle'), user_path(x.id) %>
+                <%= image_check_right(x.photo) %>
                 <%= link_to x.fullname, user_path(x.id), class: 'pt-2' %>
                 <%=link_to "<i class='text-success fas fa-plus-circle fa-2x d-flex justify-content-center'></i>".html_safe, followings_path(followed_id: x.id), method: :post %>
               </div>
