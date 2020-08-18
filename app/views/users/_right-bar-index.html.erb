@@ -3,21 +3,14 @@
   <div class = 'user-info-index'>
       <p class = 'font-weight-bold p-4'> WHO TO FOLLOW </p>
   </div>
-  <div class = 'follow-info border-top p-3'>
+  <div class = 'follow-info border-bottom'>
     <% @follow_users.each do |follow| %>
       <div class="d-flex p-3">
-        <% if follow.id != current_user.id %>
-          <%= image_check_right(follow.photo) %>
-          <% if follow.follower?(current_user, follow.id) %>
-          <%=link_to "<i class='text-warning fas fa-minus-circle fa-2x'></i>".html_safe, following_path(followed_id: follow.id), method: :delete %>
-        <% else %> 
-          <h4 class = 'pt-3'><%= link_to follow.fullname, user_path(follow.id), class: 'pr-4' %></h4>             
-          <% if follow.id != current_user.id %>
-            <%=link_to "<i class='text-success fas fa-plus-circle fa-2x pt-3'></i>".html_safe, followings_path(followed_id: follow.id), method: :post %>
-          </div>
-          <% end %>
-        <% end %>
-      <% end %>
-    <% end %>
+        <% follower_check(current_user, follow) %>
+        <div class = 'follow_unfollow_links'>
+          <%= follow_unfollow_links(current_user, follow) %>
+        </div>
+      </div>
+    <% end %>  
   <div>
 </div>

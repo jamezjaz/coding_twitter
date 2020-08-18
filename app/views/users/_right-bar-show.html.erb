@@ -40,18 +40,8 @@
   <div class 'followed-by'>
     <h4>FOLLOWED BY</h4>
     <% @user.follower_users.each do |x|  %>
-      <div class="user-followed-by-grid border-bottom p-2">
-        <div class="user-followed-by-image">
-          <% if x.id != current_user.id %>
-            <% if !x.follower?(current_user, x.id) %>
-              <div class = 'd-flex justify-content-between'>
-                <%= image_check_right(x.photo) %>
-                <%= link_to x.fullname, user_path(x.id), class: 'pt-2' %>
-                <%=link_to "<i class='text-success fas fa-plus-circle fa-2x d-flex justify-content-center'></i>".html_safe, followings_path(followed_id: x.id), method: :post %>
-              </div>
-            <% end %>
-          <% end %>
-        </div>
+      <div class="border-bottom">
+        <%= followed_by(current_user, x) %>
       </div>
     <% end %>
   </div>
