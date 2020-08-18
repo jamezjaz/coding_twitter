@@ -30,7 +30,7 @@ module ApplicationHelper
     if user_image.attached?
       link_to image_tag(user_image, class: 'cover-image'), user_path(current_user)
     else
-      link_to image_tag('http://www.gravatar.com/avatar'), user_path(current_user)
+      link_to image_tag('http://www.gravatar.com/avatar', class: 'gravatar-cover'), user_path(current_user)
     end
   end
 end
