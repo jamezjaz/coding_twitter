@@ -1,4 +1,4 @@
-# rubocop:disable Layout/LineLength
+# rubocop:disable Layout/LineLength, Style/NegatedUnless
 
 module UsersHelper
   def follower_check(current_user, user)
@@ -41,4 +41,4 @@ module UsersHelper
   end
 end
 
-# rubocop:enable Layout/LineLength
+# rubocop:enable Layout/LineLength, Style/NegatedUnless
