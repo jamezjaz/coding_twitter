@@ -14,7 +14,7 @@ module ApplicationHelper
     if user_image.attached?
       link_to image_tag(user_image, class: 'img-fluid rounded'), user_path(current_user)
     else
-      link_to image_tag('http://www.gravatar.com/avatar', class: 'w-100 h-100 rounded'), user_path(current_user)
+      link_to image_tag('http://www.gravatar.com/avatar', class: 'rounded'), user_path(current_user)
     end
   end
 
@@ -22,7 +22,7 @@ module ApplicationHelper
     if user_image.attached?
       link_to image_tag(user_image, class: 'img-fluid rounded-circle'), user_path(current_user)
     else
-      link_to image_tag('http://www.gravatar.com/avatar', class: 'w-100 h-100 rounded-circle'), user_path(current_user)
+      link_to image_tag('http://www.gravatar.com/avatar', class: 'rounded-circle'), user_path(current_user)
     end
   end
 
@@ -30,7 +30,7 @@ module ApplicationHelper
     if user_image.attached?
       link_to image_tag(user_image, class: 'cover-image'), user_path(current_user)
     else
-      link_to image_tag('http://www.gravatar.com/avatar', class: 'w-100 h-100'), user_path(current_user)
+      link_to image_tag('http://www.gravatar.com/avatar'), user_path(current_user)
     end
   end
 end

@@ -11,7 +11,7 @@
           <% end %>
         <% end %>
       </div>
-      <div class = 'profile-img-show mx-4'>
+      <div class = 'profile-img-show pl-4'>
         <%= image_check_right(@user.photo) %>
       </div>
       <div class = 'lists'>
@@ -40,7 +40,7 @@
   <div class 'followed-by'>
     <h4>FOLLOWED BY</h4>
     <% @user.follower_users.each do |x|  %>
-      <div class="border-bottom">
+      <div class="border-bottom d-flex">
         <%= followed_by(current_user, x) %>
       </div>
     <% end %>

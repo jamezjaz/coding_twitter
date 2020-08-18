@@ -25,19 +25,19 @@ module UsersHelper
   end
 
   def followed_by(current_user, user)
-    next unless user.id != current_user.id
+    return unless user.id != current_user.id
 
     return unless !user.follower?(current_user, user.id)
 
-    concat(content_tag(:div, class: 'd-flex border-top') do
+    concat(content_tag(:div, class: 'd-flex border-top px-1') do
       concat(content_tag(:div, class: '') do
         image_check_right(user.photo)
       end)
-      concat(content_tag(:div, class: 'follower-name') do
+      concat(content_tag(:div, class: 'pt-3') do
         concat(content_tag(:h4, (link_to user.fullname, user_path(user.id))))
       end)
     end)
-    link_to "<i class='text-success fas fa-plus-circle fa-2x d-flex justify-content-end'></i>".html_safe, followings_path(followed_id: user.id), method: :post
+    link_to "<i class='text-success fas fa-plus-circle fa-2x followed-by-icon'></i>".html_safe, followings_path(followed_id: user.id), method: :post
   end
 end
 
