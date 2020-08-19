@@ -2,8 +2,11 @@
   <div class = 'cover-image'>
     <%= image_check_cover(@user.coverimage) %>
   </div>
-  <div class = 'recent-tweets'>  
-    <h6 class = 'p-4'> YOUR TWEETS </h6>
+  <div class = 'border mt-4 display-5'>
+    <div class = 'username py-2 px-4'><p>@<%= @user.username %></p></div>
+  </div>
+  <div class = 'recent-tweets border'>  
+    <h6 class = 'p-4 text-primary'> ALL TWEETS </h6>
     <%= render 'opinions/tweets' %>
   </div>
 </section>
