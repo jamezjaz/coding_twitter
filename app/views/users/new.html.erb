@@ -7,6 +7,10 @@
 <div class="d-flex justify-content-center">
   <div class="form-size">
     <%= form_for(@user) do |form| %>
+      <h4> Errors: </h4>
+      <% @user.errors.full_messages.each do |error| %>
+        <li class = 'text-danger'><%= error %></li>
+      <% end %>
       <%= form.label :username %>
       <%= form.text_field :username, class: 'form-control', placeholder: 'Enter Username' %>
       <%= form.label :fullname %>
