@@ -10,8 +10,8 @@ RSpec.describe 'Creates a new account', type: :feature do
 
     click_button 'Sign Up'
 
-    expect(page).to have_content('You need to login first!')
-    expect(page).to have_button('Login')
-    expect(page).to have_content('Sign up for Coding Twitter')
+    expect(page).to have_content('You have logged in successfully')
+    expect(page).to have_content('TWEET SOMETHING')
+    expect(page).to have_content('JESUS NAVAS')
   end
 end
