@@ -3,13 +3,7 @@
   <div class = 'user-info photo-name'>
     <div class = 'profile-show d-flex justify-content-center pt-4'>
       <div>
-        <% if @user.id != current_user.id %>
-          <% if @user.follower?(current_user, @user.id) %>
-            <%=link_to "<i class='text-warning fas fa-minus-circle fa-2x'></i>".html_safe, following_path(followed_id: @user.id), method: :delete %>
-          <% else %>
-            <%=link_to "<i class='text-success fas fa-plus-circle fa-2x d-flex justify-content-center'></i>".html_safe, followings_path(followed_id: @user.id), method: :post %>
-          <% end %>
-        <% end %>
+        <%= follow_unfollow_links(current_user, @user) %>
       </div>
       <div class = 'profile-img-show pl-4'>
         <%= image_check_right(@user.photo) %>
