@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(username: params[:username])
+    @user = User.find_by(session_params)
     if @user
       session[:user_id] = @user.id
       flash[:notice] = 'You have logged in successfully'
@@ -19,5 +19,11 @@ class SessionsController < ApplicationController
     session.destroy
     flash[:alert] = 'You have logged out'
     redirect_to new_session_path
+  end
+
+  private
+
+  def session_params
+    params.permit(:username)
   end
 end

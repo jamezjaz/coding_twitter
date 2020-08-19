@@ -1,6 +1,6 @@
 class LikesController < ApplicationController
   def create
-    @like = current_user.likes.build(opinion_id: params[:opinion_id])
+    @like = current_user.likes.build(like_params)
     if @like.save
       redirect_to users_path, notice: 'You liked this opinion'
     else
@@ -9,7 +9,13 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    @like = current_user.likes.find_by(opinion_id: params[:opinion_id])
+    @like = current_user.likes.find_by(like_params)
     redirect_to users_path, alert: 'You unliked this opinion' if @like.destroy
+  end
+
+  private
+
+  def like_params
+    params.permit(:opinion_id)
   end
 end
