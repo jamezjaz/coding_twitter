@@ -41,7 +41,7 @@ module UsersHelper
   end
 
   def edit_btn(current_user, user)
-    link_to 'Edit Profile'.html_safe, edit_user_path(current_user.id), method: :get if user.id == current_user.id
+    link_to '<i class="fas fa-user-edit"></i>'.html_safe, edit_user_path(current_user.id), method: :get if user.id == current_user.id
   end
 end
 

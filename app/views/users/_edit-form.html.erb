@@ -1,6 +1,9 @@
 <div class="text-center">
   <div class="form-size">
     <%= form_for(@user) do |form| %>
+      <% @user.errors.full_messages.each do |error| %>
+        <li class = 'text-danger'><%= error %></li>
+      <% end %>
       <%= form.label :username %>
       <%= form.text_field :username, class: 'form-control', placeholder: 'Enter Username' %>
       <%= form.label :fullname %>
