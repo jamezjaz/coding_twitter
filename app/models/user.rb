@@ -3,7 +3,7 @@ class User < ApplicationRecord
   validates :fullname, presence: true, length: { minimum: 5, maximum: 20 }
 
   has_many :opinions, foreign_key: 'author_id'
-  has_many :comments, dependent: :destroy
+  # has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
 
   has_many :followings, foreign_key: 'follower_id'

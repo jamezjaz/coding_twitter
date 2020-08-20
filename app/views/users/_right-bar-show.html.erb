@@ -5,6 +5,9 @@
       <div>
         <%= follow_unfollow_links(current_user, @user) %>
       </div>
+      <div class = 'edit_link'>
+        <%= edit_btn(current_user, @user) %>
+      </div>
       <div class = 'profile-img-show pl-4'>
         <%= image_check_right(@user.photo) %>
       </div>

@@ -27,6 +27,21 @@ class UsersController < ApplicationController
     @user = User.includes(:opinions, opinions: :likes).find(params[:id])
   end
 
+  def edit
+    @user = User.find(current_user.id)
+  end
+
+  def update
+    @user = User.find(current_user.id)
+    @user.update(user_params)
+    if @user.save
+      flash[:notice] = 'Profile updated successfully'
+    else
+      flash[:alert] = 'Profile not updated'
+    end
+    redirect_to users_path
+  end
+
   private
 
   def user_params

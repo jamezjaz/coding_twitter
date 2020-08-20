@@ -39,6 +39,10 @@ module UsersHelper
     end)
     link_to "<i class='text-success fas fa-plus-circle fa-2x followed-by-icon'></i>".html_safe, followings_path(followed_id: user.id), method: :post
   end
+
+  def edit_btn(current_user, user)
+    link_to 'Edit Profile'.html_safe, edit_user_path(current_user.id), method: :get if user.id == current_user.id
+  end
 end
 
 # rubocop:enable Layout/LineLength, Style/NegatedUnless

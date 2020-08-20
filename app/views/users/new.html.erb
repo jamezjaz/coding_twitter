@@ -2,26 +2,10 @@
   <div class="logo pl-2">
     <%= link_to "<img style='width: 40px' src='https://www.freelogodesign.org/file/app/client/thumb/2afd3b18-cda1-4bc6-aad2-71500f4b9a94_200x200.png?1596903768165'>".html_safe, users_path %>
     <h4 class ='font-italic font-weight-bold sign-up-quote'>'Programming isn't about what you know; it's about what you can figure out.'</h4>
-    <h3 class = 'sign-up-twitter'>Create Account</h3>
+    <h3 class = 'text-primary sign-up-twitter'>Create Account</h3>
   </div>
 <div class="d-flex justify-content-center">
-  <div class="form-size">
-    <%= form_for(@user) do |form| %>
-      <h4> Errors: </h4>
-      <% @user.errors.full_messages.each do |error| %>
-        <li class = 'text-danger'><%= error %></li>
-      <% end %>
-      <%= form.label :username %>
-      <%= form.text_field :username, class: 'form-control', placeholder: 'Enter Username' %>
-      <%= form.label :fullname %>
-      <%= form.text_field :fullname, class: 'form-control', placeholder: 'Enter Fullname' %>
-      <%= form.label :photo %>
-      <%= form.file_field :photo, class: 'form-control' %>
-      <%= form.label :coverimage %>
-      <%= form.file_field :coverimage, class: 'form-control' %>
-      <%= form.submit 'Sign Up', class: 'btn btn-primary sign-up-btn' %>
-    <% end %>
-  </div>
+  <%= render 'sign-up-form' %>
 </div>
 <div class="d-flex justify-content-center">
 <div class="form-group">

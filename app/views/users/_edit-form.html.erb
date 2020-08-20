@@ -1,0 +1,15 @@
+<div class="text-center">
+  <div class="form-size">
+    <%= form_for(@user) do |form| %>
+      <%= form.label :username %>
+      <%= form.text_field :username, class: 'form-control', placeholder: 'Enter Username' %>
+      <%= form.label :fullname %>
+      <%= form.text_field :fullname, class: 'form-control', placeholder: 'Enter Fullname' %>
+      <%= form.label :photo %>
+      <%= form.file_field :photo, class: 'form-control' %>
+      <%= form.label :coverimage %>
+      <%= form.file_field :coverimage, class: 'form-control' %>
+      <%= form.submit 'Update', class: 'btn btn-primary sign-up-btn' %>
+    <% end %>
+  </div>
+</div>
