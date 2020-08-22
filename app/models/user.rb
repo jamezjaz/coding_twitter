@@ -17,4 +17,8 @@ class User < ApplicationRecord
   def follower?(current_user, user)
     current_user.following_users.ids.include?(user)
   end
+
+  def followings_and_own_tweets
+    Opinion.where(user: following_users).or(Opinion.where(user: self)).ordered_by_created_at
+  end
 end

@@ -1,5 +1,5 @@
 <div class="all-tweets p-3">
-  <% @opinions.ordered_by_created_at.each do |x| %>
+  <% @timeline_tweets.each do |x| %>
     <div class="all-tweets bg-white p-3 rounded border-bottom">
       <div class="tweet-image">
         <%= image_check(x.user.photo) %>

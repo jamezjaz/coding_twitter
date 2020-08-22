@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     @user = User.all.includes(:opinions, :likes)
     @opinions = Opinion.all.includes(:likes, user: [:likes])
     @follow_users = User.where(id: (@user.ids - current_user.following_users.ids)).order(created_at: :desc)
+    @timeline_tweets = timeline_tweets
   end
 
   def new
@@ -46,5 +47,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:username, :fullname, :photo, :coverimage)
+  end
+
+  def timeline_tweets
+    @timeline_tweets ||= current_user.followings_and_own_tweets
   end
 end

@@ -4,7 +4,7 @@
   </div>
   <h4 class ='font-italic font-weight-bold sign-in-quote'>'If you can write "hello world" you can change the world.'</h4>
   <h3 class = 'sign-in-twitter text-primary'>Log in to Coding Twitter</h3>
-<%= form_tag '/sessions', :method => 'post' do %>
+  <%= form_tag '/sessions', :method => 'post' do %>
     <%= label_tag :username, 'Please enter Username' %> <br />
     <%= text_field_tag :username, params[:username], class: 'textarea' %> <br />
     <%= submit_tag "Login", class: 'btn btn-primary login-btn' %> <br />

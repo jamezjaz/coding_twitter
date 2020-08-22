@@ -1,5 +1,6 @@
 class OpinionsController < ApplicationController
   before_action :authenticate
+
   def create
     @opinion = current_user.opinions.build(opinion_params)
     if @opinion.save
