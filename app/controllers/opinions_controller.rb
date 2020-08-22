@@ -11,6 +11,13 @@ class OpinionsController < ApplicationController
     redirect_to users_path
   end
 
+  def destroy
+    @opinion = Opinion.find(params[:id])
+    @opinion.destroy
+    flash[:notice] = 'Tweet successfully deleted!'
+    redirect_to user_path(current_user.id)
+  end
+
   private
 
   def opinion_params

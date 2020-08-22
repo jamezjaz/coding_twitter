@@ -11,6 +11,9 @@
           <span class='opinion-date'> <%= x.created_at.strftime("%Y/%m/%d") %> </span>
         <%= like_or_dislike(x.id) %>
       </div>
+      <div>
+        <%= link_to 'Delete',  opinion_path(x.id), method: :delete, data: {confirm: 'Really delete the article?'} %>
+      </div>
       </div>
     </div>
   <% end %>
