@@ -1,0 +1,16 @@
+
+<div class = 'container-fluid right-bar'>
+  <div class = 'user-info-index'>
+      <p class = 'font-weight-bold p-4'> WHO TO FOLLOW </p>
+  </div>
+  <div class = 'follow-info border-bottom'>
+    <% @follow_users.each do |follow| %>
+      <div class="d-flex p-3">
+        <% follower_check(current_user, follow) %>
+        <div class = 'follow_unfollow_links'>
+          <%= follow_unfollow_links(current_user, follow) %>
+        </div>
+      </div>
+    <% end %>  
+  <div>
+</div>

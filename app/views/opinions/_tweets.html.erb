@@ -1,0 +1,20 @@
+<div class="recent-tweets p-3">
+  <% @user.opinions.ordered_by_created_at.each do |x| %>
+    <div class="all-tweets bg-white p-3 rounded border-bottom d-flex">
+      <div class="tweet-photo">
+        <%= image_check(x.user.photo) %>
+      </div>
+      <div class="post-details pl-4 d-flex flex-column">
+        <%= link_to  x.user.fullname, user_path(x.user) %>
+        <p class="pt-2"><%= x.text %></p>
+        <div class='opinion-liking'>
+          <span class='opinion-date'> <%= x.created_at.strftime("%Y/%m/%d") %> </span>
+        <%= like_or_dislike(x.id) %>
+      </div>
+      <div>
+        <%= link_to 'Delete',  opinion_path(x.id), method: :delete, data: {confirm: 'Really delete the article?'} %>
+      </div>
+      </div>
+    </div>
+  <% end %>
+</div>

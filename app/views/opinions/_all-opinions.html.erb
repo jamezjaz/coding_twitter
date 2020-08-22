@@ -1,0 +1,17 @@
+<div class="all-tweets p-3">
+  <% @timeline_tweets.each do |x| %>
+    <div class="all-tweets bg-white p-3 rounded border-bottom">
+      <div class="tweet-image">
+        <%= image_check(x.user.photo) %>
+      </div>
+      <div class="post-details pl-4 d-flex flex-column">
+        <%= link_to  x.user.fullname, user_path(x.user) %>
+        <p class="pt-2"><%= x.text %></p>
+        <div class='opinion-liking'>
+          <span class='opinion-date'> <%= x.created_at.strftime("%Y/%m/%d") %> </span>
+          <%= like_or_dislike(x.id) %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
