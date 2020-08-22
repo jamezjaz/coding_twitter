@@ -28,7 +28,7 @@ It is my RoR Capstone Project of the Microverse Curriculum.
 
 ## Video Presentation
 
-  [![Coding Twitter Video](![RoR-Video-Presentation](https://user-images.githubusercontent.com/57812000/90254616-aa826b80-de08-11ea-96d8-64c800404acf.png)](https://www.loom.com/share/c80fb6371c5444129da6138714200a87)
+  [![Coding Twitter Video]![image](https://user-images.githubusercontent.com/57812000/90954895-54cc4580-e43e-11ea-807a-c8aafd13b5c8.png)](https://www.loom.com/share/d1adbcabf16b4c18a9e665feac4caff8)
 
 ## Built With
 
